@@ -1,0 +1,19 @@
+{
+  "name": "ai-web-testing",
+  "version": "0.1.0",
+  "private": false,
+  "description": "AI Web Testing skill kit using Playwright",
+  "scripts": {
+    "test:smoke": "playwright test runner/tests/smoke.spec.ts",
+    "test:functional": "playwright test",
+    "test:regression": "playwright test",
+    "report:md": "ts-node runner/src/report.ts --format=md",
+    "report:html": "ts-node runner/src/report.ts --format=html"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}

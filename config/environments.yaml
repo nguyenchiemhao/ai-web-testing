@@ -1,0 +1,45 @@
+environments:
+  local:
+    mutation_policy:
+      create: allowed
+      update: allowed
+      delete: allowed
+      destructive: allowed
+    execution_mode: full
+    requires_confirmation: false
+
+  qa:
+    mutation_policy:
+      create: confirm_required
+      update: confirm_required
+      delete: confirm_required
+      destructive: blocked_default
+    execution_mode: scoped
+    requires_confirmation: true
+
+  uat:
+    mutation_policy:
+      create: confirm_required
+      update: confirm_required
+      delete: confirm_required
+      destructive: blocked_default
+    execution_mode: scoped
+    requires_confirmation: true
+
+  staging:
+    mutation_policy:
+      create: confirm_required
+      update: confirm_required
+      delete: confirm_required
+      destructive: blocked_default
+    execution_mode: scoped
+    requires_confirmation: true
+
+  prod:
+    mutation_policy:
+      create: blocked
+      update: blocked
+      delete: blocked
+      destructive: blocked
+    execution_mode: readonly
+    requires_confirmation: false
